@@ -53,3 +53,17 @@ Now that you have got an idea of what data you are working with, and have come u
 ## Step 3 - Build (The rest of the day!)
 
 Translate your plan into code, turn your ideas into reality. Enjoy!
+
+
+
+# Fluffy and Gandalf's Plan
+
+First Page - ENTER
+
+- Header
+- Link to Myers Briggs
+- Input field with drop down of MB types
+- Random LOTR quote generated
+
+- List showing: Character - blurb of why MB - data from API - QUOTE
+

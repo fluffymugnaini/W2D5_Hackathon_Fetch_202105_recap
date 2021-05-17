@@ -90,7 +90,7 @@ function createPageTwo() {
 
 const token = "c47rg1zHgNfX4-dBEcDv";
 async function getCharacter() {
-  let response = await fetch("https://the-one-api.dev/v2/character?name=/Giml/i", {
+  let response = await fetch("https://the-one-api.dev/v2/character?name=/Frodo/i", {
     headers: {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
@@ -122,14 +122,15 @@ let mbLotrMapping = [
     {MB:"ISTJ" , name:"Aragorn", ID:"5cd99d4bde30eff6ebccfbe5"},
     {MB:"ISFJ" , name:"Samwise Gamgee", ID:"5cd99d4bde30eff6ebccfd0d"},
     {MB:"ESTP" , name:"Gimli", ID:"5cd99d4bde30eff6ebccfd23"},
-    {MB:"ISTP", name:"Eowyn", ID:""},
-    {MB:"ESFP", name:"Pippin", ID:""},
-    {MB:"ISFP", name:"Arwen", ID""},
-    {MB:"ENFJ", name:"Faramir"},
-    {MB:"INFJ", name:"Galadriel"},
-    {MB:"ENFP", name:"Merry"},
-    {MB:"INFP", name:"Frodo"},
-    {MB:"ENTJ", name:"Eomer"},
-    {MB:"INTJ", name:"Eldrond"},
-    {MB:"INTP", name:"Legolas"}
+    {MB:"ISTP", name:"Eowyn", ID:"5cdbdecb6dc0baeae48cfa59"},
+    {MB:"ESFP", name:"Pippin", ID:"5cd99d4bde30eff6ebccfe7f"},
+    {MB:"ISFP", name:"Arwen", ID:"5cd99d4bde30eff6ebccfc07"},
+    {MB:"ENFJ", name:"Faramir", ID:"5cd99d4bde30eff6ebccfcef"},
+    {MB:"INFJ", name:"Galadriel", ID:"5cd99d4bde30eff6ebccfd06"},
+    {MB:"ENFP", name:"Merry", ID:"5cd99d4bde30eff6ebccfe7b"},
+    {MB:"INFP", name:"Frodo", ID:"5cd99d4bde30eff6ebccfc15"},
+    {MB:"ENTJ", name:"Eomer", ID:"5cdbdecb6dc0baeae48cfa5a"},
+    {MB:"INTJ", name:"Elrond", id:"5cd99d4bde30eff6ebccfcc8"},
+    {MB:"INTP", name:"Legolas", ID:"5cd99d4bde30eff6ebccfd81"}
 ];
+

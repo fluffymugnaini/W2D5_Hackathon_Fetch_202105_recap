@@ -1,32 +1,38 @@
 body {
-    background-image: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg");
-    background-position: top-center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100vh;
-    text-align: center;
-    font-family: 'Cedarville Cursive', cursive;
+  /* background: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg") center center cover no-repeat fixed; */
+  background-image: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  text-align: center;
+  font-family: "Cedarville Cursive", cursive;
 }
 
 /* https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg
 https://images3.alphacoders.com/551/551161.jpg */
 
+@media only screen and (max-width: 767px) {
+  body {
+    background-image: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg");
+  }
+}
+
 .entrance-button {
-    font-size: 4rem;
-    border: 0.5px gray solid;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
-    padding: 30px 20px;
-    margin: 20%;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    font-family: inherit;
+  font-size: 4rem;
+  border: 0.5px gray solid;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  padding: 30px 20px;
+  margin: 20% 0;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  font-family: inherit;
 }
 
 .entrance-button:hover {
-    transform: scale(1.5);
-    transition-duration: 1000ms;
-    cursor: pointer;
+  transform: scale(1.5);
+  transition-duration: 1000ms;
+  cursor: pointer;
 }
-

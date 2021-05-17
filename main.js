@@ -20,12 +20,37 @@ entranceButton.addEventListener("click", enter);
 
 function createPageTwo(){
 let title = document.createElement('h1');
+title.id = "title";
 title.innerText = "Lord of the Personality Type";
 mainDiv.appendChild(title);
 
 let tagline = document.createElement('h2');
+tagline.id = "tag-line"; 
 tagline.innerText = "Enter your Myers Briggs Personality Type, and find out which LOTR character you are."
 mainDiv.appendChild(tagline);
+
+let inputForm = document.createElement("form");
+mainDiv.appendChild(inputForm);
+
+let inputOne = document.createElement("select");
+inputForm.appendChild(inputOne);
+
+let inputTwo = document.createElement("input");
+inputTwo.type = "submit";
+inputForm.appendChild(inputTwo)
+
+
+let sixteenPLink = document.createElement('a');
+sixteenPLink.href = "https://www.16personalities.com/"
+sixteenPLink.text = "click here";
+
+let explPara = document.createElement("p");
+explPara.id = "expl-para";
+explPara.innerText = `if you don't know your Myers Briggs, ${sixteenPLink}`;
+mainDiv.appendChild(explPara);  
+
+explPara.appendChild(sixteenPLink); 
+
 }
 
 const token = "c47rg1zHgNfX4-dBEcDv";

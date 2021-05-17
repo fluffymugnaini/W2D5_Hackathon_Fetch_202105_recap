@@ -9,10 +9,24 @@ mainDiv.appendChild(entranceButton);
 
 function enter() {
   entranceButton.style.display = 'none';
-  console.log("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
+  createPageTwo();
 }
 
 entranceButton.addEventListener("click", enter);
+
+//title
+//form input dropdown and submit button
+//ul where character will be displayed
+
+function createPageTwo(){
+let title = document.createElement('h1');
+title.innerText = "Lord of the Personality Type";
+mainDiv.appendChild(title);
+
+let tagline = document.createElement('h2');
+tagline.innerText = "Enter your Myers Briggs Personality Type, and find out which LOTR character you are."
+mainDiv.appendChild(tagline);
+}
 
 const token = "c47rg1zHgNfX4-dBEcDv";
 async function getCharacter() {
@@ -37,5 +51,5 @@ async function getQuote() {
   console.log(data);
 }
 
-getCharacter();
-getQuote();
+// getCharacter();
+// getQuote();

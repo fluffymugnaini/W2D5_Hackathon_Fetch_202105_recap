@@ -90,14 +90,15 @@ function createPageTwo() {
 
 const token = "c47rg1zHgNfX4-dBEcDv";
 async function getCharacter() {
-  let response = await fetch("https://the-one-api.dev/v2/character", {
+  let response = await fetch("https://the-one-api.dev/v2/character?name=/Giml/i", {
     headers: {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
   });
   const data = await response.json();
-  console.log(data);
+  console.log(data.docs[0].name);
+  console.log(data.docs[0]._id);
 }
 
 async function getQuote() {
@@ -111,5 +112,24 @@ async function getQuote() {
   console.log(data);
 }
 
-// getCharacter();
+getCharacter();
 // getQuote();
+
+let mbLotrMapping = [
+    {MB:"ENTP" , name:"Gandalf", ID:"5cd99d4bde30eff6ebccfea0"},
+    {MB:"ESFJ" , name:"Bilbo Baggins", ID:"5cd99d4bde30eff6ebccfc38"},
+    {MB:"ESTJ" , name:"Boromir", ID:"5cd99d4bde30eff6ebccfc57"},
+    {MB:"ISTJ" , name:"Aragorn", ID:"5cd99d4bde30eff6ebccfbe5"},
+    {MB:"ISFJ" , name:"Samwise Gamgee", ID:"5cd99d4bde30eff6ebccfd0d"},
+    {MB:"ESTP" , name:"Gimli", ID:"5cd99d4bde30eff6ebccfd23"},
+    {MB:"ISTP", name:"Eowyn", ID:""},
+    {MB:"ESFP", name:"Pippin", ID:""},
+    {MB:"ISFP", name:"Arwen", ID""},
+    {MB:"ENFJ", name:"Faramir"},
+    {MB:"INFJ", name:"Galadriel"},
+    {MB:"ENFP", name:"Merry"},
+    {MB:"INFP", name:"Frodo"},
+    {MB:"ENTJ", name:"Eomer"},
+    {MB:"INTJ", name:"Eldrond"},
+    {MB:"INTP", name:"Legolas"}
+];

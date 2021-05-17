@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://images3.alphacoders.com/551/551161.jpg");
+    background-image: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg");
     background-position: top-center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,6 +9,9 @@ body {
     font-family: 'Cedarville Cursive', cursive;
 }
 
+/* https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg
+https://images3.alphacoders.com/551/551161.jpg */
+
 .entrance-button {
     font-size: 4rem;
     border: 0.5px gray solid;
@@ -16,7 +19,7 @@ body {
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
     padding: 30px 20px;
-    margin: 15%;
+    margin: 20%;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     font-family: inherit;
 }

@@ -1,0 +1,29 @@
+body {
+    background-image: url("https://images3.alphacoders.com/551/551161.jpg");
+    background-position: top-center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'Cedarville Cursive', cursive;
+}
+
+.entrance-button {
+    font-size: 4rem;
+    border: 0.5px gray solid;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 30px 20px;
+    margin: 15%;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    font-family: inherit;
+}
+
+.entrance-button:hover {
+    transform: scale(1.5);
+    transition-duration: 1000ms;
+    cursor: pointer;
+}
+

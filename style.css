@@ -6,6 +6,11 @@
   font-style: normal;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   /* background: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg") center center cover no-repeat fixed; */
   background-image: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg");

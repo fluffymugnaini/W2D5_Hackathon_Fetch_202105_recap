@@ -67,3 +67,5 @@ First Page - ENTER
 
 - List showing: Character - blurb of why MB - data from API - QUOTE
 
+# post MVP
+  - placeholder text on dropdown (remove from array)

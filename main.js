@@ -1,3 +1,42 @@
+const myersBriggsTypes = [
+  "Please select a type",
+  "ISTJ",
+  "ISTP",
+  "ISFJ",
+  "ISFP",
+  "INFJ",
+  "INFP",
+  "INTJ",
+  "INTP",
+  "ESTP",
+  "ESTJ",
+  "ESFP",
+  "ESFJ",
+  "ENFP",
+  "ENFJ",
+  "ENTP",
+  "ENTJ",
+];
+
+const mbLotrMapping = [
+  { MB: "ENTP", name: "Gandalf", ID: "5cd99d4bde30eff6ebccfea0" },
+  { MB: "ESFJ", name: "Bilbo Baggins", ID: "5cd99d4bde30eff6ebccfc38" },
+  { MB: "ESTJ", name: "Boromir", ID: "5cd99d4bde30eff6ebccfc57" },
+  { MB: "ISTJ", name: "Aragorn", ID: "5cd99d4bde30eff6ebccfbe5" },
+  { MB: "ISFJ", name: "Samwise Gamgee", ID: "5cd99d4bde30eff6ebccfd0d" },
+  { MB: "ESTP", name: "Gimli", ID: "5cd99d4bde30eff6ebccfd23" },
+  { MB: "ISTP", name: "Eowyn", ID: "5cdbdecb6dc0baeae48cfa59" },
+  { MB: "ESFP", name: "Pippin", ID: "5cd99d4bde30eff6ebccfe7f" },
+  { MB: "ISFP", name: "Arwen", ID: "5cd99d4bde30eff6ebccfc07" },
+  { MB: "ENFJ", name: "Faramir", ID: "5cd99d4bde30eff6ebccfcef" },
+  { MB: "INFJ", name: "Galadriel", ID: "5cd99d4bde30eff6ebccfd06" },
+  { MB: "ENFP", name: "Merry", ID: "5cd99d4bde30eff6ebccfe7b" },
+  { MB: "INFP", name: "Frodo", ID: "5cd99d4bde30eff6ebccfc15" },
+  { MB: "ENTJ", name: "Eomer", ID: "5cdbdecb6dc0baeae48cfa5a" },
+  { MB: "INTJ", name: "Elrond", id: "5cd99d4bde30eff6ebccfcc8" },
+  { MB: "INTP", name: "Legolas", ID: "5cd99d4bde30eff6ebccfd81" }
+];
+
 //entrance button
 
 let entranceButton = document.createElement("button");
@@ -38,25 +77,6 @@ function createPageTwo() {
   let inputOne = document.createElement("select");
   inputForm.appendChild(inputOne);
 
-  let myersBriggsTypes = [
-    "ISTJ",
-    "ISTP",
-    "ISFJ",
-    "ISFP",
-    "INFJ",
-    "INFP",
-    "INTJ",
-    "INTP",
-    "ESTP",
-    "ESTJ",
-    "ESFP",
-    "ESFJ",
-    "ENFP",
-    "ENFJ",
-    "ENTP",
-    "ENTJ",
-  ];
-
   myersBriggsTypes.map((element) => {
     let option = document.createElement("option");
     option.appendChild(document.createTextNode(element));
@@ -75,7 +95,7 @@ function createPageTwo() {
 
   let explPara = document.createElement("p");
   explPara.id = "expl-para";
-  explPara.innerText = `if you don't know your Myers Briggs, ${sixteenPLink}`;
+  explPara.innerText = `if you don't know your Myers Briggs,  `;
   mainDiv.appendChild(explPara);
 
   explPara.appendChild(sixteenPLink);
@@ -86,13 +106,19 @@ function createPageTwo() {
     event.preventDefault();
     let result = inputOne.value;
     console.log(result);
+    let characterObject = mbLotrMapping.filter((element)=>{if(element.MB === result){console.log(element.MB); return(`this is the one we're looking for ${element.ID}`);}})
+    characterFetch(characterObject);
   }
 }
 
+// take the result, use the objects within an array to display
 
+function characterFetch(characterObject){
+let characterID = characterObject[0].ID;
 const token = "c47rg1zHgNfX4-dBEcDv";
+
 async function getCharacter() {
-  let response = await fetch("https://the-one-api.dev/v2/character?name=/Frodo/i", {
+  let response = await fetch(`https://the-one-api.dev/v2/character/${characterID}/quote`, {
     headers: {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
@@ -101,7 +127,14 @@ async function getCharacter() {
   const data = await response.json();
   console.log(data.docs[0].name);
   console.log(data.docs[0]._id);
+  let random = Math.floor(Math.random() * data.docs.length);
+  // console.log(random)
+  console.log(data.docs[random].dialog);
+  
 }
+getCharacter();
+}
+
 
 async function getQuote() {
   let response = await fetch("https://the-one-api.dev/v2/quote", {
@@ -114,25 +147,5 @@ async function getQuote() {
   console.log(data);
 }
 
-getCharacter();
 // getQuote();
-
-let mbLotrMapping = [
-    {MB:"ENTP" , name:"Gandalf", ID:"5cd99d4bde30eff6ebccfea0"},
-    {MB:"ESFJ" , name:"Bilbo Baggins", ID:"5cd99d4bde30eff6ebccfc38"},
-    {MB:"ESTJ" , name:"Boromir", ID:"5cd99d4bde30eff6ebccfc57"},
-    {MB:"ISTJ" , name:"Aragorn", ID:"5cd99d4bde30eff6ebccfbe5"},
-    {MB:"ISFJ" , name:"Samwise Gamgee", ID:"5cd99d4bde30eff6ebccfd0d"},
-    {MB:"ESTP" , name:"Gimli", ID:"5cd99d4bde30eff6ebccfd23"},
-    {MB:"ISTP", name:"Eowyn", ID:"5cdbdecb6dc0baeae48cfa59"},
-    {MB:"ESFP", name:"Pippin", ID:"5cd99d4bde30eff6ebccfe7f"},
-    {MB:"ISFP", name:"Arwen", ID:"5cd99d4bde30eff6ebccfc07"},
-    {MB:"ENFJ", name:"Faramir", ID:"5cd99d4bde30eff6ebccfcef"},
-    {MB:"INFJ", name:"Galadriel", ID:"5cd99d4bde30eff6ebccfd06"},
-    {MB:"ENFP", name:"Merry", ID:"5cd99d4bde30eff6ebccfe7b"},
-    {MB:"INFP", name:"Frodo", ID:"5cd99d4bde30eff6ebccfc15"},
-    {MB:"ENTJ", name:"Eomer", ID:"5cdbdecb6dc0baeae48cfa5a"},
-    {MB:"INTJ", name:"Elrond", id:"5cd99d4bde30eff6ebccfcc8"},
-    {MB:"INTP", name:"Legolas", ID:"5cd99d4bde30eff6ebccfd81"}
-];
 

@@ -107,17 +107,17 @@ function createPageTwo() {
     let result = inputOne.value;
     console.log(result);
     let characterObject = mbLotrMapping.filter((element)=>{if(element.MB === result){console.log(element.MB); return(`this is the one we're looking for ${element.ID}`);}})
-    characterFetch(characterObject);
+    characterInformation(characterObject);
   }
 }
 
 // take the result, use the objects within an array to display
 
-function characterFetch(characterObject){
+function characterInformation(characterObject){
 let characterID = characterObject[0].ID;
+console.log(characterID);
 const token = "c47rg1zHgNfX4-dBEcDv";
-
-async function getCharacter() {
+async function getCharacterQuote() {
   let response = await fetch(`https://the-one-api.dev/v2/character/${characterID}/quote`, {
     headers: {
       Accept: "application/json",
@@ -125,27 +125,30 @@ async function getCharacter() {
     },
   });
   const data = await response.json();
-  console.log(data.docs[0].name);
-  console.log(data.docs[0]._id);
   let random = Math.floor(Math.random() * data.docs.length);
   // console.log(random)
   console.log(data.docs[random].dialog);
   
 }
-getCharacter();
-}
-
-
-async function getQuote() {
-  let response = await fetch("https://the-one-api.dev/v2/quote", {
+async function getCharacter(characterID) {
+  console.log(characterID);
+  let response = await fetch(`https://the-one-api.dev/v2/character/${characterID}`, {
     headers: {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
   });
-  const data = await response.json();
-  console.log(data);
+  const dataInfo = await response.json();
+  console.log(dataInfo.docs[0].name);
+  console.log(dataInfo.docs[0]._id);
+  // console.log(dataInfo);
 }
+getCharacterQuote(characterObject);
+getCharacter(characterID);
+}
+
+
+
 
 // getQuote();
 

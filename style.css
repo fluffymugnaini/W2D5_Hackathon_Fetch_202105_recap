@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "middleearthmedium";
+  src: url('middleearth-ao6m-webfont.woff') format("woff2"),
+    url("middleearth-ao6m-webfont.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   /* background: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg") center center cover no-repeat fixed; */
   background-image: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg");
@@ -7,7 +15,8 @@ body {
   background-attachment: fixed;
   min-height: 100vh;
   text-align: center;
-  font-family: "Cedarville Cursive", cursive;
+  /* font-family: "Cedarville Cursive", cursive; */
+  font-family: "middleearthmedium";
 }
 
 /* https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg
@@ -34,5 +43,6 @@ https://images3.alphacoders.com/551/551161.jpg */
 .entrance-button:hover {
   transform: scale(1.5);
   transition-duration: 1000ms;
+  transition-timing-function: ease-in-out;
   cursor: pointer;
 }

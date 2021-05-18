@@ -1,8 +1,10 @@
 //entrance button
+
 let entranceButton = document.createElement("button");
+
 entranceButton.id = "entrance-button";
 entranceButton.className = "entrance-button";
-entranceButton.innerText = "You shall pass";
+entranceButton.innerText = "YOU SHALL PASS";
 
 let mainDiv = document.querySelector("#container");
 mainDiv.appendChild(entranceButton);

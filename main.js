@@ -33,7 +33,7 @@ const mbLotrMapping = [
   { MB: "ENFP", name: "Merry", ID: "5cd99d4bde30eff6ebccfe7b" },
   { MB: "INFP", name: "Frodo", ID: "5cd99d4bde30eff6ebccfc15" },
   { MB: "ENTJ", name: "Eomer", ID: "5cdbdecb6dc0baeae48cfa5a" },
-  { MB: "INTJ", name: "Elrond", id: "5cd99d4bde30eff6ebccfcc8" },
+  { MB: "INTJ", name: "Elrond", ID: "5cd99d4bde30eff6ebccfcc8" },
   { MB: "INTP", name: "Legolas", ID: "5cd99d4bde30eff6ebccfd81" }
 ];
 
@@ -55,6 +55,8 @@ function enter() {
 
 entranceButton.addEventListener("click", enter);
 
+let resultsDiv = document.querySelector("#results-container")
+resultsDiv.style.display = 'none';
 //title
 //form input dropdown and submit button
 //ul where character will be displayed
@@ -115,40 +117,61 @@ function createPageTwo() {
 
 function characterInformation(characterObject){
 let characterID = characterObject[0].ID;
-console.log(characterID);
 const token = "c47rg1zHgNfX4-dBEcDv";
-async function getCharacterQuote() {
+
+async function getCharacterQuoteAndInfo() {
   let response = await fetch(`https://the-one-api.dev/v2/character/${characterID}/quote`, {
     headers: {
       Accept: "application/json",
       Authorization: `Bearer ${token}`,
     },
   });
-  const data = await response.json();
-  let random = Math.floor(Math.random() * data.docs.length);
-  // console.log(random)
-  console.log(data.docs[random].dialog);
+  let data = await response.json();
   
+  let response2 = await fetch(
+    `https://the-one-api.dev/v2/character/${characterID}`,
+    {
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+    );
+  let dataInfo = await response2.json();
+  postResults(data, dataInfo);
 }
-async function getCharacter(characterID) {
-  console.log(characterID);
-  let response = await fetch(`https://the-one-api.dev/v2/character/${characterID}`, {
-    headers: {
-      Accept: "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  const dataInfo = await response.json();
-  console.log(dataInfo.docs[0].name);
-  console.log(dataInfo.docs[0]._id);
-  // console.log(dataInfo);
+// postResults(data, dataInfo);
+getCharacterQuoteAndInfo(characterObject);
+
+
+
+
+function postResults(data, dataInfo){
+  console.log(data);
+  console.log(dataInfo);
+  let random = Math.floor(Math.random() * data.docs.length);
+  // console.log(data.docs[random].dialog);
+
+  // let resultsContainer = document.querySelector("#results-container");
+
+  resultsDiv.style.display = 'block';
+  let characterName = document.createElement('h1');
+  characterName.innerText = dataInfo.docs[0].name;
+  resultsDiv.appendChild(characterName);
+
+  let attributesList = document.createElement('ul');
+  resultsDiv.appendChild(attributesList);
+
+  const characterAttributes = ["race", "birth", "death", "wikiUrl"]
+
+  let docs = dataInfo.docs[0];
+
+  characterAttributes.map((item) => {
+    let info = document.createElement('li');
+    info.innerText = `${item}: ${docs[item]}`;
+    attributesList.appendChild(info);
+  })
 }
-getCharacterQuote(characterObject);
-getCharacter(characterID);
 }
 
-
-
-
-// getQuote();
-
+// https://likeananchor.com/2013/12/16/lord-of-the-rings-mbti/

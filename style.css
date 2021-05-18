@@ -28,8 +28,7 @@ https://images3.alphacoders.com/551/551161.jpg */
   }
 }
 
-.entrance-button {
-  font-size: 4rem;
+.entrance-button, #results-container {
   border: 0.5px gray solid;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.15);
@@ -38,6 +37,11 @@ https://images3.alphacoders.com/551/551161.jpg */
   margin: 20% 0;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   font-family: inherit;
+}
+
+.entrance-button {
+  font-size: 4rem;
+  
 }
 
 .entrance-button:hover {

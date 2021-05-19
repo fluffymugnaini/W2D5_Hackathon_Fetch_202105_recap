@@ -221,11 +221,12 @@ function postResults(data, dataInfo) {
     })
     let wikiLink = document.createElement("a");
     wikiLink.href = dataInfo.docs[0].wikiUrl
-    wikiLink.text = `${dataInfo.docs[0].name}`
+    wikiLink.text = `More info on ${dataInfo.docs[0].name}`
     attributesList.appendChild(wikiLink);
 
     let blurbPara = document.createElement("p");
     let blurbContent = mbLotrMapping.find(element => element.ID == id);
+    blurbPara.id = "blurb";
     blurbPara.innerText = blurbContent.blurb
     resultsDiv.appendChild(blurbPara);
 

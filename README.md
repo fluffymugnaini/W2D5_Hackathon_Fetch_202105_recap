@@ -69,3 +69,5 @@ First Page - ENTER
 
 # post MVP
   - placeholder text on dropdown (remove from array)
+  - change of opening button - randomise whether get entry (if not, 'you shall not pass and Gandalf picture')
+  - say friend and enter - how do we build this in? 

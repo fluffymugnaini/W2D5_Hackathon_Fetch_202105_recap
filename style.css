@@ -50,7 +50,7 @@ https://images3.alphacoders.com/551/551161.jpg */
 
 .entrance-button:hover {
   transform: scale(1.5);
-  transition-duration: 1000ms;
+  transition-duration: 5000ms;
   transition-timing-function: ease-in-out;
   cursor: pointer;
 }
@@ -61,4 +61,29 @@ https://images3.alphacoders.com/551/551161.jpg */
   height: auto;
 }
 
+#list-element {
+  list-style-type: none;
+}
 
+#container {
+  margin: 100px;
+}
+
+#title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  /* color: rgba(229, 230, 220, 0.89); */
+}
+
+#tag-line{
+  background-color: rgba(255, 255, 255, 0.199);
+}
+
+#input-one, #input-two {
+  font-family: inherit;
+  margin: 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(226, 225, 225);
+}

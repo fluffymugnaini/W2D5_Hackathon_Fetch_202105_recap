@@ -39,6 +39,8 @@ const mbLotrMapping = [
 
 //entrance button
 
+alert("Speak Friend and Enter")
+
 let entranceButton = document.createElement("button");
 
 entranceButton.id = "entrance-button";
@@ -51,9 +53,20 @@ mainDiv.appendChild(entranceButton);
 function enter() {
   mainDiv.removeChild(entranceButton);
   createPageTwo();
+  //play();
 }
 
+// function play() {
+//   var audio = new Audio("gollum_precious1.wav");
+//   audio.play();
+// }
+
+var audio = new Audio("gollum_precious1.wav");
+document.querySelector(".entrance-button").addEventListener('mouseover', function(){audio.play();});
+
 entranceButton.addEventListener("click", enter);
+// entranceButton.addEventListener('mouseenter', playAudio);
+
 
 let resultsDiv = document.querySelector("#results-container")
 resultsDiv.style.display = 'none';
@@ -64,7 +77,7 @@ resultsDiv.style.display = 'none';
 function createPageTwo() {
   let title = document.createElement("h1");
   title.id = "title";
-  title.innerText = "Lord of the Personality Type";
+  title.innerText = "Lord of the Personality Types";
   mainDiv.appendChild(title);
 
   let tagline = document.createElement("h2");
@@ -163,8 +176,8 @@ mainDiv.removeChild(explParaRemove)
     console.log(data);
     console.log(dataInfo);
     let random = Math.floor(Math.random() * data.docs.length);
-    // console.log(data.docs[random].dialog);
 
+    // console.log(data.docs[random].dialog);
     // let resultsContainer = document.querySelector("#results-container");
 
     resultsDiv.style.display = 'inline-block';
@@ -185,6 +198,7 @@ mainDiv.removeChild(explParaRemove)
     resultsDiv.appendChild(characterImage);
 
     let attributesList = document.createElement('ul');
+    attributesList.id = "attributes-list";
     resultsDiv.appendChild(attributesList);
 
     const characterAttributes = ["race", "birth", "death"]
@@ -194,6 +208,7 @@ mainDiv.removeChild(explParaRemove)
     characterAttributes.map((item) => {
       let info = document.createElement('li');
       info.innerText = `${item}: ${docs[item]}`;
+      info.id = "list-element";
       attributesList.appendChild(info);
     })
     let wikiLink = document.createElement("a");

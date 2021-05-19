@@ -53,16 +53,16 @@ mainDiv.appendChild(entranceButton);
 function enter() {
   mainDiv.removeChild(entranceButton);
   createPageTwo();
-  //play();
+  play();
 }
 
-// function play() {
-//   var audio = new Audio("gollum_precious1.wav");
-//   audio.play();
-// }
+function play() {
+  var audio = new Audio("gollum_precious1.wav");
+  audio.play();
+}
 
-// var audio = new Audio("gollum_precious1.wav");
-// document.querySelector(".entrance-button").addEventListener('mouseover', function(){audio.play();});
+var audio = new Audio("gollum_precious1.wav");
+document.querySelector(".entrance-button").addEventListener('mouseover', function(){audio.play();});
 
 entranceButton.addEventListener("click", enter);
 // entranceButton.addEventListener('mouseenter', playAudio);

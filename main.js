@@ -183,8 +183,7 @@ function postResults(data, dataInfo) {
     clearInput();
     console.log(data);
     console.log(dataInfo);
-    let random = Math.floor(Math.random() * data.docs.length);
-
+    
     // console.log(data.docs[random].dialog);
     // let resultsContainer = document.querySelector("#results-container");
 
@@ -208,11 +207,11 @@ function postResults(data, dataInfo) {
     let attributesList = document.createElement('ul');
     attributesList.id = "attributes-list";
     resultsDiv.appendChild(attributesList);
-
+    
     const characterAttributes = ["race", "birth", "death"]
-
+    
     let docs = dataInfo.docs[0];
-
+    
     characterAttributes.map((item) => {
       let info = document.createElement('li');
       info.innerText = `${item}: ${docs[item]}`;
@@ -223,25 +222,37 @@ function postResults(data, dataInfo) {
     wikiLink.href = dataInfo.docs[0].wikiUrl
     wikiLink.text = `More info on ${dataInfo.docs[0].name}`
     attributesList.appendChild(wikiLink);
-
+    
     let blurbPara = document.createElement("p");
-    let blurbContent = mbLotrMapping.find(element => element.ID == id);
+    let blurbContent = mbLotrMapping.find(element => element.ID === id);
     blurbPara.id = "blurb";
     blurbPara.innerText = blurbContent.blurb
     resultsDiv.appendChild(blurbPara);
 
+    let random = Math.floor(Math.random() * data.docs.length);
+    let characterQuote = data.docs[random].dialog;
+    
+    let quote = document.createElement('p');
+    quote.innerText = `"${characterQuote}"`;
+    quote.id = "quote";
+    resultsDiv.appendChild(quote);
+
+
+    
+    
+    
     let resetButton = document.createElement("button");
     resetButton.id = "reset-button";
     resetButton.innerText = "make another selection"
     resultsDiv.appendChild(resetButton)
     resetButton.addEventListener('click', reset);
-
+    
     function reset(){
       mainDiv.removeChild(resultsDiv);
       mainDiv.removeChild(title);
       createPageTwo();
     }
-
+    
 
   }
 }

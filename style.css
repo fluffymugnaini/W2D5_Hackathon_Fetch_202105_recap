@@ -33,6 +33,8 @@ https://images3.alphacoders.com/551/551161.jpg */
   }
 }
 
+
+
 .entrance-button,
 #results-container {
   border: 0.5px gray solid;
@@ -44,6 +46,11 @@ https://images3.alphacoders.com/551/551161.jpg */
     rgba(255, 255, 255, 0.199) 0px 8px 24px,
     rgba(255, 255, 255, 0.199) 0px 16px 56px;
   font-family: inherit;
+}
+
+#results-container {
+ 
+  margin: 20px;
 }
 
 .entrance-button {
@@ -77,9 +84,7 @@ https://images3.alphacoders.com/551/551161.jpg */
   list-style-type: none;
 }
 
-#container {
-  /* margin: 100px; */
-}
+
 
 #title {
   font-size: 3.5rem;

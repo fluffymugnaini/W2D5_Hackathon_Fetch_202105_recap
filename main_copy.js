@@ -57,10 +57,7 @@ mainDiv.appendChild(entranceButton);
 function enter() {
   let randomEnter = Math.floor(Math.random() * 11);
   console.log(randomEnter)
-  if (randomEnter % 2 === 0) {
-    mainDiv.removeChild(entranceButton);
-    createPageTwo();
-  } else {
+  if (randomEnter === 3 || randomEnter === 7) {
     entranceButton.style.display = "none";
     let video = document.createElement("video");
     video.id = "video";
@@ -68,6 +65,9 @@ function enter() {
     mainDiv.appendChild(video);
     playVid();
     setTimeout(homeScreen, 5500);
+  } else {
+    mainDiv.removeChild(entranceButton);
+    createPageTwo();
   }
   //play();
 }
@@ -288,11 +288,13 @@ function characterInformation(characterObject) {
     resetButton.innerText = "make another selection"
     resultsDiv.appendChild(resetButton)
     resetButton.addEventListener('click', reset);
+    
 
     function reset() {
       mainDiv.removeChild(resultsDiv);
       mainDiv.removeChild(title);
       createPageTwo();
+
     }
 
 
@@ -301,3 +303,5 @@ function characterInformation(characterObject) {
 
 
 // https://likeananchor.com/2013/12/16/lord-of-the-rings-mbti/
+
+// https://www.mediacollege.com/downloads/sound-effects/movie/lordoftherings/fellowship/

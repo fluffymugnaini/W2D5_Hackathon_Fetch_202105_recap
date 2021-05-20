@@ -150,6 +150,8 @@ https://images3.alphacoders.com/551/551161.jpg */
 
 #expl-para {
   font-size: 1.2rem;
+  backdrop-filter: blur(5px);
+  color: lightgrey;
 }
 
 #input-form {
@@ -200,4 +202,28 @@ https://images3.alphacoders.com/551/551161.jpg */
   rgba(255, 255, 255, 0.199) 0px 8px 24px,
   rgba(255, 255, 255, 0.199) 0px 16px 56px;
   border:grey
+}
+
+a:link {
+  color: lightgrey;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: lightgrey;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: lightblue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: lightgrey;
+  background-color: transparent;
+  text-decoration: underline;
 }

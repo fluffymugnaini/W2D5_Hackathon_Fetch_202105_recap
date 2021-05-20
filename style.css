@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   text-align: center;
   /* font-family: "Cedarville Cursive", cursive; */
-  font-family: "middleearthmedium";
+  font-family: "middleearthmedium", 'Josefin Slab', serif;
 }
 
 /* https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg
@@ -66,7 +66,7 @@ https://images3.alphacoders.com/551/551161.jpg */
 }
 
 #password {
-  font-family: 'elvish';
+  font-family: 'elvish', 'Josefin Slab', serif;
   font-size: 4em;
   opacity: 0.7;
 }

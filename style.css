@@ -1,7 +1,14 @@
 @font-face {
   font-family: "middleearthmedium";
-  src: url("middleearth-ao6m-webfont.woff") format("woff2"),
-    url("middleearth-ao6m-webfont.woff2") format("woff");
+  src: url("./fontFiles/middleearth-ao6m-webfont.woff") format("woff2"),
+    url("./fontFiles/middleearth-ao6m-webfont.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "elvish";
+  src: url("./fontFiles/elvish-6ppo-webfont.woff") format("woff"),
+    url("./fontFiles/elvish-6ppo-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -48,22 +55,37 @@ https://images3.alphacoders.com/551/551161.jpg */
   font-family: inherit;
 }
 
-#results-container {
- 
+#results-container, #container {
   margin: 20px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#password {
+  font-family: 'elvish';
+  font-size: 4em;
+  opacity: 0.7;
 }
 
 .entrance-button {
   font-size: 4rem;
-  margin: 20% 0;
+  margin: 15% 10% 10% 10%;
+  width: fit-content;
+
 }
 
-.entrance-button:hover {
+.entrance-button:hover, #password:hover {
   transform: scale(1.5);
   transition-duration: 5000ms;
   transition-timing-function: ease-in-out;
   cursor: pointer;
 }
+
+
 
 #character-image {
   width: 100%;
@@ -84,12 +106,9 @@ https://images3.alphacoders.com/551/551161.jpg */
   list-style-type: none;
 }
 
-
-
 #title {
   font-size: 3.5rem;
   font-weight: bold;
-  /* color: rgba(229, 230, 220, 0.89); */
   padding-top: 2%;
 }
 
@@ -175,25 +194,13 @@ https://images3.alphacoders.com/551/551161.jpg */
 	padding: .5rem;
 }
 
-/* #quote:before,
-#quote:after {
-	position: absolute;
-	color: #F1EFE6;
-	font-size: 8rem;
-	width: 4rem;
-	height: 4rem;
-}
+#soundtrack {
+  width: 260px;
+  height: 25px;
+  opacity: 0.6;
+ margin: 10px;
 
-#quote:before {
-	content: '"';
-	left: -5rem;
-	top: -2rem;
 }
-#quote:after {
-	content: '"';
-	right: -5rem;
-	bottom: 1rem;
-} */
 
 #video {
   margin-top: 10rem;
@@ -229,3 +236,12 @@ a:active {
 }
 
 #foobar { display: none }
+
+#footer {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-family: 'elvish';
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: black;
+}

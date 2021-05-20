@@ -41,31 +41,56 @@ const mbLotrMapping = [
 
 // alert("Speak Friend and Enter")
 
+
 let entranceButton = document.createElement("button");
 
 entranceButton.id = "entrance-button";
 entranceButton.className = "entrance-button";
-entranceButton.innerText = "YOU SHALL PASS";
+entranceButton.innerText = "Enter, Friend?";
 
 let mainDiv = document.querySelector("#container");
 mainDiv.appendChild(entranceButton);
 
+
 function enter() {
-  mainDiv.removeChild(entranceButton);
-  createPageTwo();
+  let randomEnter = Math.floor(Math.random() * 11);
+  console.log(randomEnter)
+  if (randomEnter % 2 === 0) {
+    mainDiv.removeChild(entranceButton);
+    createPageTwo();
+  } else {
+    entranceButton.style.display = "none";
+    let video = document.createElement("video");
+    video.id = "video";
+    video.src = "You_Shall_Not_Pass.mov";
+    mainDiv.appendChild(video);
+    playVid();
+    setTimeout(homeScreen, 5500);
+  }
   //play();
 }
 
-// function play() {
-//   var audio = new Audio("gollum_precious1.wav");
-//   audio.play();
-// }
+function play() {
+  var audio = new Audio("gollum_precious1.wav");
+  audio.play();
+}
 
-// var audio = new Audio("gollum_precious1.wav");
-// document.querySelector(".entrance-button").addEventListener('mouseover', function(){audio.play();});
+let notPassVideo = document.querySelector("video");
+function playVid() {
+  let notPassVideo = document.querySelector("#video");
+  notPassVideo.play()
+}
+function homeScreen(){
+  entranceButton.style.display = "unset";
+  let removeVideo = document.querySelector("#video");
+  mainDiv.removeChild(removeVideo)
+}
+
+var audio = new Audio("gollum_precious1.wav");
+document.querySelector(".entrance-button").addEventListener('mouseover', function () { audio.play(); });
 
 entranceButton.addEventListener("click", enter);
-// entranceButton.addEventListener('mouseenter', playAudio);
+entranceButton.addEventListener('mouseenter', playAudio);
 
 
 
@@ -122,7 +147,7 @@ function createPageTwo() {
 
   inputTwo.addEventListener("click", getResult);
 
-  
+
 
   function getResult(event) {
     event.preventDefault();
@@ -164,26 +189,26 @@ function characterInformation(characterObject) {
   // postResults(data, dataInfo);
   getCharacterQuoteAndInfo(characterObject);
 
-function clearInput(){
-let tagLineRemove = document.querySelector("#tag-line");
-mainDiv.removeChild(tagLineRemove);
-let inputFormRemove = document.querySelector("#input-form");
-mainDiv.removeChild(inputFormRemove);
-let explParaRemove = document.querySelector("#expl-para");
-mainDiv.removeChild(explParaRemove)
+  function clearInput() {
+    let tagLineRemove = document.querySelector("#tag-line");
+    mainDiv.removeChild(tagLineRemove);
+    let inputFormRemove = document.querySelector("#input-form");
+    mainDiv.removeChild(inputFormRemove);
+    let explParaRemove = document.querySelector("#expl-para");
+    mainDiv.removeChild(explParaRemove)
 
 
-}
+  }
 
 
-function postResults(data, dataInfo) {
-  let resultsDiv = document.createElement("div");
-  resultsDiv.id = "results-container";
-  mainDiv.appendChild(resultsDiv);
+  function postResults(data, dataInfo) {
+    let resultsDiv = document.createElement("div");
+    resultsDiv.id = "results-container";
+    mainDiv.appendChild(resultsDiv);
     clearInput();
     console.log(data);
     console.log(dataInfo);
-    
+
     // console.log(data.docs[random].dialog);
     // let resultsContainer = document.querySelector("#results-container");
 
@@ -207,11 +232,11 @@ function postResults(data, dataInfo) {
     let attributesList = document.createElement('ul');
     attributesList.id = "attributes-list";
     resultsDiv.appendChild(attributesList);
-    
+
     const characterAttributes = ["race", "birth", "death"]
-    
+
     let docs = dataInfo.docs[0];
-    
+
     characterAttributes.map((item) => {
       let info = document.createElement('li');
       info.innerText = `${item}: ${docs[item]}`;
@@ -222,7 +247,7 @@ function postResults(data, dataInfo) {
     wikiLink.href = dataInfo.docs[0].wikiUrl
     wikiLink.text = `More info on ${dataInfo.docs[0].name}`
     attributesList.appendChild(wikiLink);
-    
+
     let blurbPara = document.createElement("p");
     let blurbContent = mbLotrMapping.find(element => element.ID === id);
     blurbPara.id = "blurb";
@@ -231,28 +256,28 @@ function postResults(data, dataInfo) {
 
     let random = Math.floor(Math.random() * data.docs.length);
     let characterQuote = data.docs[random].dialog;
-    
+
     let quote = document.createElement('p');
     quote.innerText = `"${characterQuote}"`;
     quote.id = "quote";
     resultsDiv.appendChild(quote);
 
 
-    
-    
-    
+
+
+
     let resetButton = document.createElement("button");
     resetButton.id = "reset-button";
     resetButton.innerText = "make another selection"
     resultsDiv.appendChild(resetButton)
     resetButton.addEventListener('click', reset);
-    
-    function reset(){
+
+    function reset() {
       mainDiv.removeChild(resultsDiv);
       mainDiv.removeChild(title);
       createPageTwo();
     }
-    
+
 
   }
 }

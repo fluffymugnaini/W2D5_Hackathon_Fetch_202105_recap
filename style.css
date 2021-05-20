@@ -192,3 +192,12 @@ https://images3.alphacoders.com/551/551161.jpg */
 	right: -5rem;
 	bottom: 1rem;
 } */
+
+#video {
+  margin-top: 10rem;
+  border-radius: 2%;
+  box-shadow: rgba(255, 255, 255, 0.199) 0px 4px 16px,
+  rgba(255, 255, 255, 0.199) 0px 8px 24px,
+  rgba(255, 255, 255, 0.199) 0px 16px 56px;
+  border:grey
+}

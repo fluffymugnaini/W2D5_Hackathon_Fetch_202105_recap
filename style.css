@@ -227,3 +227,5 @@ a:active {
   background-color: transparent;
   text-decoration: underline;
 }
+
+#foobar { display: none }

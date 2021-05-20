@@ -73,7 +73,7 @@ https://images3.alphacoders.com/551/551161.jpg */
 
 .entrance-button {
   font-size: 4rem;
-  margin: 15% 10% 10% 10%;
+  margin: 15% 10% 5% 10%;
   width: fit-content;
 
 }
@@ -244,4 +244,8 @@ a:active {
   font-size: 1.5rem;
   font-weight: 800;
   color: black;
+}
+
+#clue {
+  margin: 20px;
 }

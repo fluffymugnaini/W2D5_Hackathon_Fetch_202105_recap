@@ -209,8 +209,18 @@ function playVid() {
 function homeScreen() {
   entranceButton.style.display = "unset";
   secretEntranceWord.style.display = "unset";
+  secretEntranceWord.style.transform = "scale(1.5)";
+  secretEntranceWord.style.opacity = "1";
+  secretEntranceWord.style.color = "black";
+  secretEntranceWord.style.borderBottom = "solid";
   let removeVideo = document.querySelector("#video");
   mainDiv.removeChild(removeVideo);
+
+  let clue = document.createElement("h1");
+  clue.id = "clue";
+  clue.innerText = "CLICK FRIEND AND ENTER THEN";
+
+  mainDiv.appendChild(clue);
 }
 
 // function play() {

@@ -181,12 +181,20 @@ secretEntranceWord.innerText = "FRIEND";
 
 mainDiv.appendChild(secretEntranceWord);
 
+let clue = document.createElement("h1");
+clue.id = "clue";
+clue.innerText = "CLICK FRIEND IN ELVISH AND ENTER THEN!";
+clue.style.opacity = '0';
+
+mainDiv.appendChild(clue);
+
 function enter() {
   let randomEnter = Math.floor(Math.random() * 11);
   console.log(randomEnter);
-  if (randomEnter > 7) {
+  if (randomEnter > 0) {
     entranceButton.style.display = "none";
     secretEntranceWord.style.display = "none";
+    clue.style.display = "none";
     let video = document.createElement("video");
     video.id = "video";
     video.src = "You_Shall_Not_Pass.mov";
@@ -196,6 +204,7 @@ function enter() {
   } else {
     mainDiv.removeChild(entranceButton);
     mainDiv.removeChild(secretEntranceWord);
+    mainDiv.removeChild(clue);
     createPageTwo();
   }
 }
@@ -208,19 +217,19 @@ function playVid() {
 
 function homeScreen() {
   entranceButton.style.display = "unset";
+  clue.style.display = "unset";
   secretEntranceWord.style.display = "unset";
+
   secretEntranceWord.style.transform = "scale(1.5)";
   secretEntranceWord.style.opacity = "1";
   secretEntranceWord.style.color = "black";
   secretEntranceWord.style.borderBottom = "solid";
+  clue.style.opacity = '1';
+
   let removeVideo = document.querySelector("#video");
   mainDiv.removeChild(removeVideo);
 
-  let clue = document.createElement("h1");
-  clue.id = "clue";
-  clue.innerText = "CLICK FRIEND AND ENTER THEN";
-
-  mainDiv.appendChild(clue);
+  
 }
 
 // function play() {
@@ -234,6 +243,8 @@ document
   .addEventListener("click", function () {
     audio.play();
   });
+
+  entranceButton.addEventListener("click", enter);
 
 function createPageTwo() {
   let title = document.createElement("h1");
@@ -271,6 +282,7 @@ function createPageTwo() {
   let sixteenPLink = document.createElement("a");
   sixteenPLink.id = "personality-link";
   sixteenPLink.href = "https://www.16personalities.com/";
+  sixteenPLink.target = "_blank";
   sixteenPLink.text = "click here";
 
   let explPara = document.createElement("p");
@@ -445,7 +457,7 @@ function characterInformation(characterObject) {
   }
 }
 
-entranceButton.addEventListener("click", enter);
+
 
 // https://likeananchor.com/2013/12/16/lord-of-the-rings-mbti/
 

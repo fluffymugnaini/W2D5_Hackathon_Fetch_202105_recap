@@ -183,15 +183,33 @@ mainDiv.appendChild(secretEntranceWord);
 
 let clue = document.createElement("h1");
 clue.id = "clue";
-clue.innerText = "CLICK FRIEND IN ELVISH AND ENTER THEN!";
+clue.innerText = "CLICK 'FRIEND' IN ELVISH AND ENTER THEN!";
 clue.style.opacity = '0';
 
 mainDiv.appendChild(clue);
 
-function enter() {
-  let randomEnter = Math.floor(Math.random() * 11);
-  console.log(randomEnter);
-  if (randomEnter > 0) {
+// function enter() {
+//   let randomEnter = Math.floor(Math.random() * 11);
+//   console.log(randomEnter);
+//   if (randomEnter > 0) {
+//     entranceButton.style.display = "none";
+//     secretEntranceWord.style.display = "none";
+//     clue.style.display = "none";
+//     let video = document.createElement("video");
+//     video.id = "video";
+//     video.src = "You_Shall_Not_Pass.mov";
+//     mainDiv.appendChild(video);
+//     playVid();
+//     setTimeout(homeScreen, 5500);
+//   } else {
+//     mainDiv.removeChild(entranceButton);
+//     mainDiv.removeChild(secretEntranceWord);
+//     mainDiv.removeChild(clue);
+//     createPageTwo();
+//   }
+// }
+
+function noEntry() {
     entranceButton.style.display = "none";
     secretEntranceWord.style.display = "none";
     clue.style.display = "none";
@@ -201,13 +219,15 @@ function enter() {
     mainDiv.appendChild(video);
     playVid();
     setTimeout(homeScreen, 5500);
-  } else {
+  } 
+  
+  function enter() {
     mainDiv.removeChild(entranceButton);
     mainDiv.removeChild(secretEntranceWord);
     mainDiv.removeChild(clue);
     createPageTwo();
   }
-}
+
 
 // let notPassVideo = document.querySelector("video");
 function playVid() {
@@ -237,14 +257,22 @@ function homeScreen() {
 //   audio.play();
 // }
 
-var audio = new Audio("./soundfiles/gollum_precious1.wav");
+var audio = new Audio("./soundfiles/mellon.wav");
 document
-  .querySelector(".entrance-button")
+  .querySelector("#password")
   .addEventListener("click", function () {
     audio.play();
   });
+document
+  .querySelector("#password")
+  .addEventListener("mouseover", function () {
+    audio.play();
+  });
 
-  entranceButton.addEventListener("click", enter);
+  entranceButton.addEventListener("click", noEntry);
+  secretEntranceWord.addEventListener("click", enter);
+  
+
 
 function createPageTwo() {
   let title = document.createElement("h1");

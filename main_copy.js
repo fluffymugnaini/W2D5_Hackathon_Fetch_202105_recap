@@ -175,7 +175,7 @@ entranceButton.innerText = "FRIEND, ENTER?";
 
 mainDiv.appendChild(entranceButton);
 
-let secretEntranceWord = document.createElement('h1');
+let secretEntranceWord = document.createElement("h1");
 secretEntranceWord.id = "password";
 secretEntranceWord.innerText = "FRIEND";
 
@@ -184,7 +184,7 @@ mainDiv.appendChild(secretEntranceWord);
 let clue = document.createElement("h1");
 clue.id = "clue";
 clue.innerText = "CLICK 'FRIEND' IN ELVISH AND ENTER THEN!";
-clue.style.opacity = '0';
+clue.style.opacity = "0";
 
 mainDiv.appendChild(clue);
 
@@ -210,24 +210,23 @@ mainDiv.appendChild(clue);
 // }
 
 function noEntry() {
-    entranceButton.style.display = "none";
-    secretEntranceWord.style.display = "none";
-    clue.style.display = "none";
-    let video = document.createElement("video");
-    video.id = "video";
-    video.src = "You_Shall_Not_Pass.mov";
-    mainDiv.appendChild(video);
-    playVid();
-    setTimeout(homeScreen, 5500);
-  } 
-  
-  function enter() {
-    mainDiv.removeChild(entranceButton);
-    mainDiv.removeChild(secretEntranceWord);
-    mainDiv.removeChild(clue);
-    createPageTwo();
-  }
+  entranceButton.style.display = "none";
+  secretEntranceWord.style.display = "none";
+  clue.style.display = "none";
+  let video = document.createElement("video");
+  video.id = "video";
+  video.src = "You_Shall_Not_Pass.mov";
+  mainDiv.appendChild(video);
+  playVid();
+  setTimeout(homeScreen, 5500);
+}
 
+function enter() {
+  mainDiv.removeChild(entranceButton);
+  mainDiv.removeChild(secretEntranceWord);
+  mainDiv.removeChild(clue);
+  createPageTwo();
+}
 
 // let notPassVideo = document.querySelector("video");
 function playVid() {
@@ -244,12 +243,10 @@ function homeScreen() {
   secretEntranceWord.style.opacity = "1";
   secretEntranceWord.style.color = "black";
   secretEntranceWord.style.borderBottom = "solid";
-  clue.style.opacity = '1';
+  clue.style.opacity = "1";
 
   let removeVideo = document.querySelector("#video");
   mainDiv.removeChild(removeVideo);
-
-  
 }
 
 // function play() {
@@ -258,21 +255,15 @@ function homeScreen() {
 // }
 
 var audio = new Audio("./soundfiles/mellon.wav");
-document
-  .querySelector("#password")
-  .addEventListener("click", function () {
-    audio.play();
-  });
-document
-  .querySelector("#password")
-  .addEventListener("mouseover", function () {
-    audio.play();
-  });
+document.querySelector("#password").addEventListener("click", function () {
+  audio.play();
+});
+document.querySelector("#password").addEventListener("mouseover", function () {
+  audio.play();
+});
 
-  entranceButton.addEventListener("click", noEntry);
-  secretEntranceWord.addEventListener("click", enter);
-  
-
+entranceButton.addEventListener("click", noEntry);
+secretEntranceWord.addEventListener("click", enter);
 
 function createPageTwo() {
   let title = document.createElement("h1");
@@ -484,8 +475,6 @@ function characterInformation(characterObject) {
     footerDiv.appendChild(footer);
   }
 }
-
-
 
 // https://likeananchor.com/2013/12/16/lord-of-the-rings-mbti/
 

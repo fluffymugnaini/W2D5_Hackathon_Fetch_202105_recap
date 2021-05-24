@@ -197,14 +197,20 @@ function noEntry() {
   video.src = "You_Shall_Not_Pass.mov";
   mainDiv.appendChild(video);
   playVid();
-  setTimeout(homeScreen, 5600);
+  setTimeout(homeScreen, 5500);
 }
 
 function enter() {
   mainDiv.removeChild(entranceButton);
   mainDiv.removeChild(secretEntranceWord);
   mainDiv.removeChild(clue);
-  createPageTwo();
+  let enterVideo = document.createElement("video");
+  enterVideo.id = "entrance-video";
+  enterVideo.src = "Enter.mov";
+  mainDiv.appendChild(enterVideo);
+  playVid2();
+  setTimeout(createPageTwo, 3500);
+
 }
 
 // let notPassVideo = document.querySelector("video");
@@ -213,6 +219,12 @@ function playVid() {
   notPassVideo.play();
 }
 
+function playVid2() {
+  let enterVideo = document.querySelector("#entrance-video");
+  enterVideo.play();
+}
+
+
 function homeScreen() {
   entranceButton.style.display = "unset";
   clue.style.display = "unset";
@@ -220,7 +232,7 @@ function homeScreen() {
 
   secretEntranceWord.style.transform = "scale(1.5)";
   secretEntranceWord.style.opacity = "1";
-  secretEntranceWord.style.color = "black";
+  secretEntranceWord.style.color = "#B0C2D7";
   secretEntranceWord.style.borderBottom = "solid";
   clue.style.opacity = "1";
 
@@ -246,8 +258,9 @@ secretEntranceWord.addEventListener("click", enter);
 
 function createPageTwo() {
   let body = document.querySelector("#body");
-  body.style.backgroundImage =
-    "url('https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg')";
+  body.style.backgroundImage = "url('https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg')"
+  let enterVideoRemove = document.querySelector("#entrance-video");
+  mainDiv.removeChild(enterVideoRemove);
 
   let title = document.createElement("h1");
   title.id = "title";
@@ -273,6 +286,17 @@ function createPageTwo() {
     option.appendChild(document.createTextNode(element));
     option.value = element;
     inputOne.appendChild(option);
+
+    // function playFanfare() {
+    //   let mainAudio = document.createElement("audio");
+    //   mainAudio.id = "fanfare";
+    //   mainAudio.src = "./soundfiles/fanfare.wav";
+    //   // audio.controls = true;
+    //   // audio.volume = 0.3;
+    //   mainDiv.appendChild(mainAudio);
+    //   mainAudio.play();
+    // }
+    // playFanfare();
   });
 
   let inputTwo = document.createElement("input");
@@ -312,7 +336,7 @@ function createPageTwo() {
 
 function characterInformation(characterObject) {
   let characterID = characterObject[0].ID;
-  const token = "_-xxYfMIC6IchKL0yIm8";
+    const token = "_-xxYfMIC6IchKL0yIm8";
 
   async function getCharacterQuoteAndInfo() {
     let response = await fetch(
@@ -322,7 +346,7 @@ function characterInformation(characterObject) {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,
         },
-      } 
+      }
     );
     let data = await response.json();
 

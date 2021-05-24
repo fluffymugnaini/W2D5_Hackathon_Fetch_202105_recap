@@ -339,7 +339,7 @@ function characterInformation(characterObject) {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,
         },
-      }
+      } 
     );
     let data = await response.json();
 
@@ -352,6 +352,7 @@ function characterInformation(characterObject) {
         },
       }
     );
+    
     let dataInfo = await response2.json();
     postResults(data, dataInfo);
   }

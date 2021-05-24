@@ -72,6 +72,8 @@ body {
   font-family: 'elvish', 'Josefin Slab', serif;
   font-size: 4em;
   opacity: 0.7;
+  margin-left: 9.5%;
+  color: #B0C2D7
 }
 
 .entrance-button {
@@ -101,9 +103,6 @@ body {
     margin-top: 20px;
 }
 
-/* #character-image:hover {
- opacity: 0.5;
-} */
 
 #list-element {
   list-style-type: none;
@@ -252,6 +251,7 @@ a:active {
 
 #clue {
   margin: 20px;
+  color: #B0C2D7
 }
 
 @media only screen 

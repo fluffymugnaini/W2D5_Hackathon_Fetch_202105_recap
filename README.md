@@ -11,6 +11,8 @@ For the API: https://the-one-api.dev/ \
 For the Myer's Briggs Info: https://likeananchor.com/2013/12/16/lord-of-the-rings-mbti/ \
 For the font: https://www.fontspace.com/category/lord-of-the-rings \
 
+# The deployed site:
+https://lord-of-the-myers.netlify.app/
 
 # Contributors
 [Fluffy](https://github.com/fluffymugnaini) and [Gandalf](https://github.com/GandalfHod)

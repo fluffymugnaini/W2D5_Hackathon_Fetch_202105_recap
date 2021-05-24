@@ -299,4 +299,8 @@ h1 {
   font-size: 2.2rem;
   line-height: 1.5em;
 }
+
+#character-image {
+  max-width: 350px;
+}
 }

@@ -329,7 +329,7 @@ function createPageTwo() {
 
 function characterInformation(characterObject) {
   let characterID = characterObject[0].ID;
-  const token = config.MY_KEY;
+  //const token = config.MY_KEY;
 
   async function getCharacterQuoteAndInfo() {
     let response = await fetch(
@@ -352,7 +352,7 @@ function characterInformation(characterObject) {
         },
       }
     );
-    
+
     let dataInfo = await response2.json();
     postResults(data, dataInfo);
   }

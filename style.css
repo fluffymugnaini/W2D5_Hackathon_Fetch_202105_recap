@@ -33,6 +33,8 @@ body {
 
 }
 
+
+
 /* https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg
 https://images3.alphacoders.com/551/551161.jpg */
 
@@ -56,6 +58,8 @@ https://images3.alphacoders.com/551/551161.jpg */
     rgba(255, 255, 255, 0.199) 0px 16px 56px;
   font-family: inherit;
 }
+
+
 
 #results-container, #container {
   margin: 20px;
@@ -251,4 +255,45 @@ a:active {
 
 #clue {
   margin: 20px;
+}
+
+@media only screen 
+  /* and (min-device-width: 375px)  */
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+#input-one,
+#input-two,
+#reset-button {
+ font-size: 2.5rem;
+ margin: 50px;
+}
+#title {
+  font-size: 4rem;
+  margin: 50px;
+}
+#expl-para {
+  font-size: 3em;
+}
+
+.entrance-button, #video {
+  margin-top: 45%;
+  font-size: 5em;
+  font-weight: bolder;
+}
+
+#list-element {
+  font-size: 2rem;
+  margin: 10px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 10px;
+}
+
+#blurb {
+  margin: 30px;
+  font-size: 2rem;
+  line-height: 80%;
+}
 }

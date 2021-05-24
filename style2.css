@@ -213,7 +213,7 @@ https://images3.alphacoders.com/551/551161.jpg */
 
 }
 
-#video {
+#video, #entrance-video {
   margin-top: 10rem;
   border-radius: 2%;
   box-shadow: rgba(255, 255, 255, 0.199) 0px 4px 16px,

@@ -218,7 +218,7 @@ function noEntry() {
   video.src = "You_Shall_Not_Pass.mov";
   mainDiv.appendChild(video);
   playVid();
-  setTimeout(homeScreen, 5500);
+  setTimeout(homeScreen, 5600);
 }
 
 function enter() {

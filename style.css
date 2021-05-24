@@ -50,7 +50,7 @@ https://images3.alphacoders.com/551/551161.jpg */
 #results-container {
   border: 0.5px gray solid;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.171);
   backdrop-filter: blur(5px);
   padding: 30px 20px;
   box-shadow: rgba(255, 255, 255, 0.199) 0px 4px 16px,
@@ -267,6 +267,9 @@ a:active {
  font-size: 2.5rem;
  margin: 50px;
 }
+#results-container {
+   background-color: rgba(255, 255, 255, 0.336);
+}
 #title {
   font-size: 4rem;
   margin: 50px;
@@ -281,7 +284,7 @@ a:active {
   font-weight: bolder;
 }
 
-#list-element {
+#list-element, a {
   font-size: 2rem;
   margin: 10px;
 }
@@ -293,7 +296,7 @@ h1 {
 
 #blurb {
   margin: 30px;
-  font-size: 2rem;
-  line-height: 80%;
+  font-size: 2.2rem;
+  line-height: 1.5em;
 }
 }

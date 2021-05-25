@@ -20,8 +20,9 @@
 
 body {
   /* background: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg") center center cover no-repeat fixed; */
-  background-image: url("https://art.ngfiles.com/images/505000/505877_spectar22_the-doors-of-moria-2.jpg?f1493086368");
-  /* background-image: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg"); */
+  background-image: url("./AmendedImage.png");
+  /* background-image: url("https://art.ngfiles.com/images/505000/505877_spectar22_the-doors-of-moria-2.jpg?f1493086368");
+  background-image: url("https://studybreaks.com/wp-content/uploads/2018/04/The-Lord-of-the-Rings.jpg"); */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,9 +59,8 @@ https://images3.alphacoders.com/551/551161.jpg */
     rgba(255, 255, 255, 0.199) 0px 8px 24px,
     rgba(255, 255, 255, 0.199) 0px 16px 56px;
   font-family: inherit;
+  margin-top: 20%;
 }
-
-
 
 #results-container, #container {
   margin: 20px;
@@ -70,21 +70,30 @@ https://images3.alphacoders.com/551/551161.jpg */
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 #password {
   font-family: 'elvish', 'Josefin Slab', serif;
   font-size: 4em;
   opacity: 0.7;
-  margin-left: 9.5%;
-  color: #B0C2D7
+  /* margin-left: 9.5%; */
+  color: #B0C2D7;
+  margin-top: 5%;
+}
 
-  
+#password, #clue {
+  background-color: rgba(0, 0, 0, 0.699);
+  padding: 5px;
+  border-radius: 5px;
+   box-shadow: rgba(8, 8, 8, 0.199) 0px 4px 16px,
+    rgba(15, 14, 14, 0.199) 0px 8px 24px,
+    rgba(15, 15, 15, 0.199) 0px 16px 56px;
 }
 
 .entrance-button {
   font-size: 3rem;
-  margin: 20% 10% 5% 20%;
+  /* margin: 20% 10% 5% 20%; */
   width: fit-content;
 
 }
@@ -260,7 +269,7 @@ a:active {
 
 #clue {
   margin-top: 5%;
-  margin-left: 12.5%;
+  /* margin-left: 12.5%; */
   color: #B0C2D7
 }
 
@@ -285,7 +294,7 @@ a:active {
   font-size: 3em;
 }
 
-.entrance-button, #video {
+.entrance-button, #video, #entrance-video {
   margin-top: 45%;
   font-size: 5em;
   font-weight: bolder;

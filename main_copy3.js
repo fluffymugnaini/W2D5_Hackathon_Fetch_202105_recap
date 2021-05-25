@@ -341,7 +341,7 @@ function createPageTwo() {
 
 function characterInformation(characterObject) {
   let characterID = characterObject[0].ID;
-  const token = config.MY_KEY;
+  const token = "_-xxYfMIC6IchKL0yIm8";
 
   async function getCharacterQuoteAndInfo() {
     let response = await fetch(
